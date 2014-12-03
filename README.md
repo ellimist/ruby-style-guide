@@ -2886,7 +2886,7 @@ condition](#safe-assignment-in-condition).
   ```Ruby
   # bad
   email = data['email']
-  nickname = data['nickname']
+  username = data['nickname']
 
   # good
   email, username = data.values_at('email', 'nickname')

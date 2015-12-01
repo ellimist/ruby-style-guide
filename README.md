@@ -702,7 +702,7 @@ Translations of the guide are available in the following languages:
   # good - use with splat
   first, *list = [1, 2, 3, 4]
 
-  hello_array = *"Hello"
+  hello_array = *'Hello'
 
   a = *(1..3)
   ```
@@ -1413,7 +1413,7 @@ condition](#safe-assignment-in-condition).
   # bad
   name = 'Bozhidar' unless name
 
-  # good - set name to Bozhidar, only if it's nil or false
+  # good - set name to 'Bozhidar', only if it's nil or false
   name ||= 'Bozhidar'
   ```
 
@@ -1480,10 +1480,10 @@ condition](#safe-assignment-in-condition).
 
   ```Ruby
   # bad - eql? is the same as == for strings
-  "ruby".eql? some_str
+  'ruby'.eql? some_str
 
   # good
-  "ruby" == some_str
+  'ruby' == some_str
   1.0.eql? x # eql? makes sense here if want to differentiate between Fixnum and Float 1
   ```
 
@@ -2577,7 +2577,7 @@ no parameters.
     @@class_var = 'child'
   end
 
-  Parent.print_class_var # => will print "child"
+  Parent.print_class_var # => will print 'child'
   ```
 
   As you can see all the classes in a class hierarchy actually share one
@@ -3121,7 +3121,7 @@ resource cleanup when possible.
   ```Ruby
   heroes = { batman: 'Bruce Wayne', superman: 'Clark Kent' }
   # bad - if we make a mistake we might not spot it right away
-  heroes[:batman] # => "Bruce Wayne"
+  heroes[:batman] # => 'Bruce Wayne'
   heroes[:supermann] # => nil
 
   # good - fetch raises a KeyError making the problem obvious
@@ -3372,12 +3372,12 @@ resource cleanup when possible.
     str = 'lisp-case-rules'
 
     # bad
-    url.gsub("http://", "https://")
-    str.gsub("-", "_")
+    url.gsub('http://', 'https://')
+    str.gsub('-', '_')
 
     # good
-    url.sub("http://", "https://")
-    str.tr("-", "_")
+    url.sub('http://', 'https://')
+    str.tr('-', '_')
     ```
 
 * <a name="heredocs"></a>
